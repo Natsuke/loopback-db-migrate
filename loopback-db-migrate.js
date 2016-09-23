@@ -16,23 +16,7 @@ if (!datasource) {
     process.exit(1);
 }
 
-datasource.createModel('Migration', {
-    "name": {
-        "id": true,
-        "type": "String",
-        "required": true,
-        "length": 100
-    },
-    "db": {
-        "type": "String",
-        "length": 100,
-        "required": true
-    },
-    "runDtTm": {
-        "type": "Date",
-        "required": true
-    }
-});
+datasource.createModel('Migration', require('./models/migration.json'));
 
 // make migration folders if they don't exist
 try {
